@@ -1411,7 +1411,7 @@
                         id: 'regexp_like',
                         title: 'REGEXP_LIKE()',
                         desc: 'البحث المتقدم جداً بالتعابير النمطية (Regular Expressions).',
-                        code: `SELECT email FROM users\nWHERE REGEXP_LIKE(email, '^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\\.[A-Za-z]{2,}$');`,
+                        code: `SELECT email FROM users\nWHERE REGEXP_LIKE(email, '^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}$');`,
                         explanation: 'تختبر REGEXP_LIKE النمط لا النص الحرفي. المثال يفلتر صيغة تشبه البريد الإلكتروني، لكنه ليس تحققاً كاملاً من معيار البريد ولا يثبت أن العنوان موجود أو قابل للاستلام. استخدمه كفحص أولي، ثم طبّق قواعد المنتج أو التحقق خارج قاعدة البيانات عند الحاجة.',
                         mock: { cols: ['email'], rows: [['user@gmail.com']] }
                     },
