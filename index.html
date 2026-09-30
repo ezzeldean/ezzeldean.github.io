@@ -873,7 +873,6 @@
                 <button id="spacingButton" type="button" class="rounded-lg border border-slate-300 px-3 py-2 text-right font-bold text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-pressed="false">زيادة تباعد السطور والحروف</button>
                 <button id="motionButton" type="button" class="rounded-lg border border-slate-300 px-3 py-2 text-right font-bold text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-pressed="false">تقليل الحركة والانتقالات</button>
             </div>
-            <p class="mt-3 text-xs leading-relaxed text-slate-600">وضع التمييز البصري يستخدم تركوازًا وذهبيًا مع حدود وعلامة للعنصر المختار؛ فلا يعتمد الفهم على لون واحد. أمّا التباين العالي فيزيل الألوان ويعرض الواجهة بالأبيض والأسود فقط. الخياران بديلان: اختيار أحدهما يوقف الآخر. لا يرسل الموقع أي بيانات.</p>
             <p id="readingStatus" class="sr-only" role="status" aria-live="polite"></p>
         </section>
     </div>
@@ -1412,7 +1411,7 @@
                         id: 'regexp_like',
                         title: 'REGEXP_LIKE()',
                         desc: 'البحث المتقدم جداً بالتعابير النمطية (Regular Expressions).',
-                        code: `SELECT email FROM users\nWHERE REGEXP_LIKE(email, '^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$');`,
+                        code: `SELECT email FROM users\nWHERE REGEXP_LIKE(email, '^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\\.[A-Za-z]{2,}$');`,
                         explanation: 'تختبر REGEXP_LIKE النمط لا النص الحرفي. المثال يفلتر صيغة تشبه البريد الإلكتروني، لكنه ليس تحققاً كاملاً من معيار البريد ولا يثبت أن العنوان موجود أو قابل للاستلام. استخدمه كفحص أولي، ثم طبّق قواعد المنتج أو التحقق خارج قاعدة البيانات عند الحاجة.',
                         mock: { cols: ['email'], rows: [['user@gmail.com']] }
                     },
